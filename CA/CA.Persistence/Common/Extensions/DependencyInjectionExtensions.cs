@@ -8,7 +8,7 @@ namespace CA.Persistence.Common.Extensions
     {
         public static IServiceCollection AddPersistenceInjections(this IServiceCollection services)
         {
-            
+            services.AddDbContext<PersonDbContext>(options => options.UseSqlServer("myrealconnectionstring"));
             return services;
         }
     }
