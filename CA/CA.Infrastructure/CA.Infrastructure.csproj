@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CA.Application\CA.Application.csproj" />
+    <PackageReference Include="Autofac" Version="5.1.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\IOC\Modules\" />
+    <ProjectReference Include="..\CA.Application\CA.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using CA.Persistence.Common.IOC.Modules;
 
 namespace CA.Persistence.Common.IOC
 {
@@ -6,6 +7,8 @@ namespace CA.Persistence.Common.IOC
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterModule(new DbContextModule());
+
             base.Load(builder);
         }
     }

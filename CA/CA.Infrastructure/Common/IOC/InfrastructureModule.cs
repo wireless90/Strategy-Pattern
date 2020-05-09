@@ -1,5 +1,6 @@
 ﻿
 using Autofac;
+using CA.Infrastructure.Common.IOC.Modules;
 
 namespace CA.Infrastructure.Common.IOC
 {
@@ -7,6 +8,8 @@ namespace CA.Infrastructure.Common.IOC
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterModule(new PersonSearchStrategyModule());
+
             base.Load(builder);
         }
     }
