@@ -8,4 +8,8 @@
     <ProjectReference Include="..\CA.Application\CA.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\IOC\Modules\" />
+  </ItemGroup>
+
 </Project>
