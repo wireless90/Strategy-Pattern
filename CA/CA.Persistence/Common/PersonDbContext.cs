@@ -6,7 +6,8 @@ namespace CA.Persistence.Common
 {
     public class PersonDbContext : DbContext, IPersonDbContext
     {
-        public PersonDbContext()
+        public PersonDbContext(DbContextOptions<PersonDbContext> dbContextOptions)
+            : base(dbContextOptions)
         {
 
         }
