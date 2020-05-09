@@ -34,7 +34,7 @@ namespace CA.Application.PersonContext.Queries.SearchPerson
                 );
 
             return await _personSearchService.InitializeSet(personsQuery)
-                .SearchName("PermutePlus")
+                .SearchName("PermutePlus", request.Name)
                 .AsQueryable()
                 .ToListAsync();
         }
