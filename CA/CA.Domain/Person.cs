@@ -6,8 +6,8 @@ namespace CA.Domain
     {
         public int Id { get; set; }
 
-        List<PersonIdentification> PersonIdentifications { get; set; }
+        public List<PersonIdentification> PersonIdentifications { get; set; }
 
-        List<PersonName> PersonNames { get; set; }
+        public List<PersonName> PersonNames { get; set; }
     }
 }
