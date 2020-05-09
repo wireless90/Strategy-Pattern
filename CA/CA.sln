@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA.Persistence", "CA.Persis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA.Infrastructure", "CA.Infrastructure\CA.Infrastructure.csproj", "{E7F7C28B-D977-46C1-AEDB-64C10F1F3C34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA.Web", "CA.Web\CA.Web.csproj", "{A05C50C1-A5DD-4AF9-97B2-AFD6D9DF9D71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E7F7C28B-D977-46C1-AEDB-64C10F1F3C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7F7C28B-D977-46C1-AEDB-64C10F1F3C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7F7C28B-D977-46C1-AEDB-64C10F1F3C34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05C50C1-A5DD-4AF9-97B2-AFD6D9DF9D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05C50C1-A5DD-4AF9-97B2-AFD6D9DF9D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05C50C1-A5DD-4AF9-97B2-AFD6D9DF9D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05C50C1-A5DD-4AF9-97B2-AFD6D9DF9D71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
