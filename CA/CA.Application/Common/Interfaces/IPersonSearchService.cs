@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace CA.Application.Common.Interfaces
 {
-    interface IPersonSearchService
+    public interface IPersonSearchService
     {
         IPersonSearchService InitializeSet(IQueryable<Person> persons);
 
