@@ -13,12 +13,10 @@ namespace CA.Application.PersonContext.Queries.SearchPerson
 {
     public class SearchPersonQueryHandler : IRequestHandler<SearchPersonQuery, List<Person>>
     {
-        private readonly IPersonDbContext _personDbContext;
         private readonly IPersonSearchService _personSearchService;
 
-        public SearchPersonQueryHandler(IPersonDbContext personDbContext, IPersonSearchService personSearchService)
+        public SearchPersonQueryHandler(IPersonSearchService personSearchService)
         {
-            _personDbContext = personDbContext;
             _personSearchService = personSearchService;
         }
 
