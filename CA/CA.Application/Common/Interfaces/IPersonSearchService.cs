@@ -6,7 +6,6 @@ namespace CA.Application.Common.Interfaces
 {
     /// <summary>
     ///     Searches for Persons by dynamically accepting the name of a search strategy
-    ///     
     ///     <example>
     ///         <code>
     ///             IQueryable<Person> personQuery = _personSearchService
@@ -52,7 +51,7 @@ namespace CA.Application.Common.Interfaces
         /// <param name="isEagerLoaded">
         ///     If set to true, constructs the IQueryable<Person> in a way to load all PersonIdentifications for this Person, within this query, 
         /// </param>
-        /// <returns></returns>
+        /// <returns>Returns the current class itself.</returns>
         IPersonSearchService SearchIdentification(String nameOfStrategy, PersonIdentification personIdentification, bool isEagerLoaded = true);
 
         /// <summary>
