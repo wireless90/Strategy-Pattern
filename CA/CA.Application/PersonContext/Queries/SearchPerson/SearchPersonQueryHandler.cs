@@ -1,4 +1,5 @@
-﻿using CA.Application.Common.Interfaces;
+﻿using CA.Application.Common.Constants;
+using CA.Application.Common.Interfaces;
 using CA.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -24,8 +25,8 @@ namespace CA.Application.PersonContext.Queries.SearchPerson
         public async Task<List<Person>> Handle(SearchPersonQuery request, CancellationToken cancellationToken)
         {
             return await _personSearchService
-                .SearchIdentification("PersonIdContainsAndTypeEquals", new PersonIdentification() { Identification = request.Identification, Type = request.IdentificationType})
-                .SearchName("PersonNamePermutePlus", new PersonName() { Name = request.Name })
+                .SearchIdentification(PersonSearchStrategyConstants.PersonIdentification.IdContainsIdTypeEquals, new PersonIdentification() { Identification = request.Identification, Type = request.IdentificationType})
+                .SearchName(PersonSearchStrategyConstants.PersonName.PermutePlus, new PersonName() { Name = request.Name })
                 .AsQueryable()
                 .ToListAsync();
         }

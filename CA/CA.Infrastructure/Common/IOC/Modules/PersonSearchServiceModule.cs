@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using CA.Application.Common.Constants;
 using CA.Application.Common.Interfaces;
 using CA.Domain;
 using CA.Infrastructure.Common.Interfaces;
@@ -12,10 +13,10 @@ namespace CA.Infrastructure.Common.IOC.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<PersonNamePermuteSearchStrategy>()
-                .Keyed<IPersonSearchStrategy<PersonName>>("PersonNamePermutePlus");
+                .Keyed<IPersonSearchStrategy<PersonName>>(PersonSearchStrategyConstants.PersonName.PermutePlus);
             
             builder.RegisterType<PersonIdentificationContainsAndTypeEqualsSearchStrategy>()
-                .Keyed<IPersonSearchStrategy<PersonIdentification>>("PersonIdContainsAndTypeEquals");
+                .Keyed<IPersonSearchStrategy<PersonIdentification>>(PersonSearchStrategyConstants.PersonIdentification.IdContainsIdTypeEquals);
 
             builder.RegisterType<PersonSearchService>()
                 .As<IPersonSearchService>();
