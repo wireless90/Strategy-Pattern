@@ -23,17 +23,8 @@ namespace CA.Application.PersonContext.Queries.SearchPerson
 
         public async Task<List<Person>> Handle(SearchPersonQuery request, CancellationToken cancellationToken)
         {
-            IQueryable<Person> personsQuery = _personDbContext.Persons
-                .Include(person => person.PersonIdentifications)
-                .Where(person => 
-                    String.IsNullOrEmpty(request.Identification) ||
-                    String.IsNullOrEmpty(request.IdentificationType) ||
-                    person.PersonIdentifications.Any(p => 
-                        p.Identification.Equals(request.Identification) && p.Type.Equals(request.IdentificationType)
-                    )
-                );
-
-            return await _personSearchService.InitializeSet(personsQuery)
+            return await _personSearchService
+                .SearchIdentification("PersonIdContainsAndTypeEquals", new PersonIdentification() { Identification = request.Identification, Type = request.IdentificationType})
                 .SearchName("PersonNamePermutePlus", new PersonName() { Name = request.Name })
                 .AsQueryable()
                 .ToListAsync();

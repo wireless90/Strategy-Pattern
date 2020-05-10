@@ -2,7 +2,7 @@
 using CA.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace CA.Persistence.Common
+namespace CA.Persistence
 {
     public class PersonDbContext : DbContext, IPersonDbContext
     {

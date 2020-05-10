@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CA.Application.Common.Extensions;
 using CA.Infrastructure.Common.Extensions;
 using CA.Persistence.Common.Extensions;
+using CA.Web.Common.IOC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,7 +27,7 @@ namespace CA.Web
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationInjections()
                 .AddInfrastructureInjections()
@@ -34,6 +35,7 @@ namespace CA.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            return ContainerConfig.Build(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

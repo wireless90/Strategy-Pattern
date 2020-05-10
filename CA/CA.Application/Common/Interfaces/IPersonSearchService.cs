@@ -8,7 +8,9 @@ namespace CA.Application.Common.Interfaces
     {
         IPersonSearchService InitializeSet(IQueryable<Person> personQuery);
 
-        IPersonSearchService SearchName(String nameOfStrategy, PersonName personName);
+        IPersonSearchService SearchName(String nameOfStrategy, PersonName personName, bool isEagerLoaded = true);
+
+        IPersonSearchService SearchIdentification(String nameOfStrategy, PersonIdentification personIdentification, bool isEagerLoaded = true);
 
         IQueryable<Person> AsQueryable();
     }

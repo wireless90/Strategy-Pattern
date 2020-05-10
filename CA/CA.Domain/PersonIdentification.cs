@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CA.Domain
 {
+    [Table("PersonIdentifications")]
     public class PersonIdentification
     {
         public int Id { get; set; }

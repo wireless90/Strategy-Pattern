@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CA.Application.PersonContext.Queries.SearchPerson;
+using CA.Domain;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CA.Web.Controllers
@@ -10,11 +13,18 @@ namespace CA.Web.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IMediator _mediator;
+
+        public ValuesController(IMediator mediator)
+        {
+            _mediator = mediator;    
+        }
+
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<ActionResult<IEnumerable<Person>>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return  await _mediator.Send(new SearchPersonQuery() { Name = "RAZALI", Identification = "12345", IdentificationType = "T" });
         }
 
         // GET api/values/5

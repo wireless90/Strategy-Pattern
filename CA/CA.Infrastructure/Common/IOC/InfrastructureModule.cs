@@ -8,7 +8,7 @@ namespace CA.Infrastructure.Common.IOC
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterModule(new PersonSearchStrategyModule());
+            builder.RegisterModule(new PersonSearchServiceModule());
 
             base.Load(builder);
         }
