@@ -1,5 +1,6 @@
 ﻿using CA.Domain;
 using CA.Infrastructure.Common.Interfaces;
+using LinqKit;
 using System;
 using System.Linq;
 

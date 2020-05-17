@@ -24,7 +24,7 @@ namespace CA.Web.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Person>>> Get()
         {
-            return  await _mediator.Send(new SearchPersonQuery() { Name = "RAZALI", Identification = "12345", IdentificationType = "T" });
+            return  await _mediator.Send(new SearchPersonQuery() { Name = "RAZ G", Identification = "12345", IdentificationType = "T" });
         }
 
         // GET api/values/5

@@ -40,6 +40,7 @@ namespace CA.Application.Common.Interfaces
         /// <returns>Returns the current class itself.</returns>
         IPersonSearchService SearchName(String nameOfStrategy, PersonName personName, bool isEagerLoaded = true);
 
+        IPersonSearchService SearchNameExp(String nameOfStrategy, PersonName personName, bool isAndClause = true);
         /// <summary>
         ///     Given the name of a strategy to run, builds upon the existing IQueryable<Person> query;
         /// </summary>
@@ -53,7 +54,8 @@ namespace CA.Application.Common.Interfaces
         /// </param>
         /// <returns>Returns the current class itself.</returns>
         IPersonSearchService SearchIdentification(String nameOfStrategy, PersonIdentification personIdentification, bool isEagerLoaded = true);
-
+        
+        IPersonSearchService SearchIdentificationExp(String nameOfStrategy, PersonIdentification personIdentification, bool isAndClause = true);
         /// <summary>
         /// Returns the IQueryable<Person> result.
         /// </summary>

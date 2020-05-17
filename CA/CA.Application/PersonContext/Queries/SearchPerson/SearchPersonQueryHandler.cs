@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,13 +21,13 @@ namespace CA.Application.PersonContext.Queries.SearchPerson
             _personSearchService = personSearchService;
         }
 
-        public async Task<List<Person>> Handle(SearchPersonQuery request, CancellationToken cancellationToken)
+        public Task<List<Person>> Handle(SearchPersonQuery request, CancellationToken cancellationToken)
         {
-            return await _personSearchService
-                .SearchIdentification(PersonSearchStrategyConstants.PersonIdentification.IdContainsIdTypeEquals, new PersonIdentification() { Identification = request.Identification, Type = request.IdentificationType})
-                .SearchName(PersonSearchStrategyConstants.PersonName.PermutePlus, new PersonName() { Name = request.Name })
+            return Task.FromResult(_personSearchService
+                .SearchIdentificationExp(PersonSearchStrategyConstants.PersonIdentification.IdContainsIdTypeEquals, new PersonIdentification() { Identification = request.Identification, Type = request.IdentificationType }, false)
+                .SearchNameExp(PersonSearchStrategyConstants.PersonName.PermutePlus, new PersonName() { Name = request.Name }, false)
                 .AsQueryable()
-                .ToListAsync();
+                .ToList());
         }
     }
 }

@@ -18,6 +18,12 @@ namespace CA.Infrastructure.Common.IOC.Modules
             builder.RegisterType<PersonIdentificationContainsAndTypeEqualsSearchStrategy>()
                 .Keyed<IPersonSearchStrategy<PersonIdentification>>(PersonSearchStrategyConstants.PersonIdentification.IdContainsIdTypeEquals);
 
+            builder.RegisterType<PersonNamePermuteExpSearchStrategy>()
+                .Keyed<IPersonExpSearchStrategy<PersonName>>(PersonSearchStrategyConstants.PersonName.PermutePlus);
+
+            builder.RegisterType<PersonIdentificationContainsAndTypeEqualsExpSearchStrategy>()
+                .Keyed<IPersonExpSearchStrategy<PersonIdentification>>(PersonSearchStrategyConstants.PersonIdentification.IdContainsIdTypeEquals);
+
             builder.RegisterType<PersonSearchService>()
                 .As<IPersonSearchService>();
 
