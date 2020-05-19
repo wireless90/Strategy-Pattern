@@ -9,7 +9,8 @@ namespace CA.Persistence.Common.Extensions
     {
         public static IServiceCollection AddPersistenceInjections(this IServiceCollection services)
         {
-            services.AddDbContext<PersonDbContext>(options => options.UseSqlServer(@"Data Source=DESKTOP-S0OLDPR\SQLEXPRESS;Initial Catalog=VidlyDB;Integrated Security=True"));
+            services.AddDbContext<PersonDbContext>(options => 
+            options.UseSqlServer(@"Data Source=DESKTOP-S0OLDPR\SQLEXPRESS;Initial Catalog=VidlyDB;Integrated Security=True"));
 
             return services;
         }

@@ -1,0 +1,6 @@
+2020-05-20 00:59:56.289 +08:00 [DBG] testing before
+2020-05-20 00:59:56.423 +08:00 [DBG] testing afterrrrr {"MoveNextAction":"System.Action","Result":{"Id":2,"PersonIdentifications":null,"PersonNames":null,"$type":"Person"},"Id":224,"Exception":null,"Status":"RanToCompletion","IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":"None","AsyncState":null,"IsFaulted":false,"$type":"AsyncStateMachineBox`1"}
+2020-05-20 01:01:59.497 +08:00 [DBG] testing before
+2020-05-20 01:01:59.625 +08:00 [DBG] testing afterrrrr {"MoveNextAction":"System.Action","Result":{"Id":2,"PersonIdentifications":null,"PersonNames":null,"$type":"Person"},"Id":268,"Exception":null,"Status":"RanToCompletion","IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":"None","AsyncState":null,"IsFaulted":false,"$type":"AsyncStateMachineBox`1"}
+2020-05-20 01:07:56.293 +08:00 [DBG] testing before
+2020-05-20 01:07:56.424 +08:00 [DBG] testing afterrrrr {"MoveNextAction":"System.Action","Result":{"Id":2,"PersonIdentifications":null,"PersonNames":null,"$type":"Person"},"Id":229,"Exception":null,"Status":"RanToCompletion","IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":"None","AsyncState":null,"IsFaulted":false,"$type":"AsyncStateMachineBox`1"}

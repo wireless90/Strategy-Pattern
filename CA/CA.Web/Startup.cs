@@ -6,6 +6,8 @@ using CA.Application.Common.Extensions;
 using CA.Infrastructure.Common.Extensions;
 using CA.Persistence.Common.Extensions;
 using CA.Web.Common.IOC;
+using Hangfire;
+using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +31,10 @@ namespace CA.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            services.AddHangfire(configuration =>
+            {
+                configuration.UseMemoryStorage();
+            });
             services.AddApplicationInjections()
                 .AddInfrastructureInjections()
                 .AddPersistenceInjections();
@@ -50,6 +56,9 @@ namespace CA.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseHangfireServer();
+            app.UseHangfireDashboard();
 
             app.UseHttpsRedirection();
             app.UseMvc();

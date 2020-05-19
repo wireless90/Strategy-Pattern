@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace CA.Web
 {
@@ -14,6 +8,11 @@ namespace CA.Web
     {
         public static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Console()
+                .WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day)
+                .MinimumLevel.Debug()
+                .CreateLogger();
             CreateWebHostBuilder(args).Build().Run();
         }
 
